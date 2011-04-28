@@ -1,0 +1,35 @@
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages' %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :ispool %><br />
+    <%= f.text_field :ispool %>
+  </div>
+  <div class="field">
+    <%= f.label :address_id %><br />
+    <%= f.text_field :address_id %>
+  </div>
+  <div class="field">
+    <%= f.label :carengine %><br />
+    <%= f.text_field :carengine %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

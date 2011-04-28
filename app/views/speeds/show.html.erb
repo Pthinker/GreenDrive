@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Velocity:</b>
+  <%= @speed.velocity %>
+</p>
+
+<p>
+  <b>Collect time:</b>
+  <%= @speed.collect_time %>
+</p>
+
+<p>
+  <b>Longtitude:</b>
+  <%= @speed.longtitude %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @speed.latitude %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @speed.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_speed_path(@speed) %> |
+<%= link_to 'Back', speeds_path %>

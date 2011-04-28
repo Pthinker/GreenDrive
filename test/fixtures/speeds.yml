@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  velocity: 9.99
+  collect_time: 1
+  longtitude: 9.99
+  latitude: 9.99
+  user_id: 1
+
+two:
+  velocity: 9.99
+  collect_time: 1
+  longtitude: 9.99
+  latitude: 9.99
+  user_id: 1

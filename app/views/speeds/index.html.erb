@@ -1,0 +1,31 @@
+<h1>Listing speeds</h1>
+
+<table>
+  <tr>
+    <th>Velocity</th>
+    <th>Collect time</th>
+    <th>Longtitude</th>
+    <th>Latitude</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @speeds.each do |speed| %>
+  <tr>
+    <td><%= speed.velocity %></td>
+    <td><%= speed.collect_time %></td>
+    <td><%= speed.longtitude %></td>
+    <td><%= speed.latitude %></td>
+    <td><%= speed.user_id %></td>
+    <td><%= link_to 'Show', speed %></td>
+    <td><%= link_to 'Edit', edit_speed_path(speed) %></td>
+    <td><%= link_to 'Destroy', speed, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Speed', new_speed_path %>

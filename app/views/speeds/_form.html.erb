@@ -1,0 +1,37 @@
+<%= form_for(@speed) do |f| %>
+  <% if @speed.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@speed.errors.count, "error") %> prohibited this speed from being saved:</h2>
+
+      <ul>
+      <% @speed.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :velocity %><br />
+    <%= f.text_field :velocity %>
+  </div>
+  <div class="field">
+    <%= f.label :collect_time %><br />
+    <%= f.text_field :collect_time %>
+  </div>
+  <div class="field">
+    <%= f.label :longtitude %><br />
+    <%= f.text_field :longtitude %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

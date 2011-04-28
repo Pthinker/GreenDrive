@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  email: MyString
+  phone: MyString
+  encrypted_password: MyString
+  salt: MyString
+  ispool: 1
+  address_id: 1
+  carengine: 1
+
+two:
+  email: MyString
+  phone: MyString
+  encrypted_password: MyString
+  salt: MyString
+  ispool: 1
+  address_id: 1
+  carengine: 1
