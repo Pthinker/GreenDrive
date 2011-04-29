@@ -112,7 +112,7 @@ class UsersController < ApplicationController
       user = User.find(user_id)
       address_id = user.address_id
       #puts address_id
-      @recommendUsers = User.find(:all, :conditions => ["address_id=? and ispool=1", address_id] )
+      @recommendUsers = User.find(:all, :conditions => ["address_id=? and ispool=1 and id!=?", address_id, user_id] )
       respond_to do |format|
         format.json { render :json => @recommendUsers.to_json(:except => [ :created_at, :updated_at, :id, :encrypted_password, :salt, :ispool])}
       end
