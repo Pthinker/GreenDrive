@@ -64,12 +64,12 @@ class UsersController < ApplicationController
         flash[:success] = "Welcome to SpeedMatters App!"
         format.html { redirect_to(@user, :notice => 'User was successfully created.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
-        format.json { render :json => @user }
+        format.json { render :json => @user.to_json(:except => [ :created_at, :updated_at, :ispool]) }
       else
         @title = "Sign up"
         format.html { render :action => "new" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-        format.json { render :json => @user }
+        format.json { render :text=>'FAIL', :status => '400' }
       end
     end
   end
@@ -101,5 +101,21 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
+  
+  def recommendUsers
+    user_id = params[:user_id]
+    if user_id.nil?
+      respond_to do |format|
+        format.json { render :text => 'FAIL', :status => 400 }
+      end
+    else
+      user = User.find(user_id)
+      address_id = user.address_id
+      #puts address_id
+      @recommendUsers = User.find(:all, :conditions => ["address_id=? and ispool=1", address_id] )
+      respond_to do |format|
+        format.json { render :json => @recommendUsers.to_json(:except => [ :created_at, :updated_at, :id, :encrypted_password, :salt, :ispool])}
+      end
+    end
+  end
 end

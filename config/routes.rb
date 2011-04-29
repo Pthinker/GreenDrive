@@ -1,7 +1,8 @@
 GreenDrive::Application.routes.draw do
   post 'speeds/saveJsonData'
   get 'speeds/getJsonData'
- 
+  get 'users/recommendUsers'
+
   resources :speeds
 
   resources :addresses

@@ -81,10 +81,6 @@ class SpeedsController < ApplicationController
     end
   end
 
-  def getJsonData
-    
-  end
-
   def saveJsonData
     #jsonData = params[:_json].to_s
     jsonArr = params[:_json] if not params[:_json].nil?
@@ -104,7 +100,7 @@ class SpeedsController < ApplicationController
       user_id = params[:user_id]
       @speeds = Speed.find(:all, :conditions => ["user_id=?", user_id])
       respond_to do |format|
-        format.json  { render :json => @speeds }
+        format.json  { render :json => @speeds.to_json(:except => [:created_at, :updated_at, :id]) }
       end
     else
       respond_to do |format|

@@ -2,6 +2,7 @@ require 'digest'
 
 class User < ActiveRecord::Base
   has_many :speeds  
+  has_one :address
 
   attr_accessor :password
   attr_accessible :username, :email, :phone, :password, :password_confirmation, :address_id, :ispool, :carengine
